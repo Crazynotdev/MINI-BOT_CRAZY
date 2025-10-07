@@ -107,7 +107,7 @@ const botNumber = await crazyNotDev.decodeJid(crazyNotDev.user.id);
         // autre fonctions
         import { smsg, sendGmail, formatSize, isUrl, generateMessageTag, getBuffer, getSizeMedia, runtime, fetchJson, sleep } from './library/myfunc';
 
-        import _prem from "./library/premium";
+        import _prem from "./library/prem";
         const isPremium = Access ? true : _prem.checkPremiumUser(m.sender);
 
         // Photo
@@ -197,7 +197,7 @@ const botNumber = await crazyNotDev.decodeJid(crazyNotDev.user.id);
 
                 const pong = a - b;
 
-                await crazyNotDev.sendMessage(m.chat, 'Latence : *_${pong}_*')
+                await crazyNotDev.sendMessage(m.chat, 'Latence : *_${pong} Ms_*')
             }
             break;
             case 'owner':
@@ -242,4 +242,5 @@ const botNumber = await crazyNotDev.decodeJid(crazyNotDev.user.id);
                 if (isCmd && !craz.public) return;
                 break;
         }
+
     
