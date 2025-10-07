@@ -127,35 +127,35 @@ store.bind(crazyNotDev.ev);
     const { connection, lastDisconnect } = update;
     if (connection === 'close') {
         const reason = new boom(lastDisconnect?.error)?.output.statusCode;
-        console.log(color(lastDisconnect.error, 'deeppink'));
+        console.log(shadow, lastDisconnect.error, 'deeppink');
         if (reason === DisconnectReason.badSession) {
-            console.log(color(`Bad Session File, Please Delete Session and Scan Again`));
+            console.log(yushi, `Bad Session File, Please Delete Session and Scan Again`);
             process.exit();
         } else if (reason === DisconnectReason.connectionClosed) {
-            console.log(color('[SYSTEM] Connection closed, reconnecting...', 'deeppink'));
+            console.log(shadow, '[SYSTEM] Connection closed, reconnecting...', 'deeppink');
             process.exit();
         } else if (reason === DisconnectReason.connectionLost) {
-            console.log(color('[SYSTEM] Connection lost, trying to reconnect', 'deeppink'));
+            console.log(yushi, '[SYSTEM] Connection lost, trying to reconnect', 'deeppink');
             process.exit();
         } else if (reason === DisconnectReason.connectionReplaced) {
-            console.log(color('Connection Replaced, Another New Session Opened'));
+            console.log(shadow, 'Connection Replaced, Another New Session Opened');
             crazyNotDev.logout();
         } else if (reason === DisconnectReason.loggedOut) {
-            console.log(color(`Device Logged Out, Please Scan Again And Run.`));
+            console.log(yushi, `Device Logged Out, Please Scan Again And Run.`);
             crazyNotDev.logout();
         } else if (reason === DisconnectReason.restartRequired) {
-            console.log(color('Restart Required, Restarting...'));
+            console.log(yushi, 'Restart Required, Restarting...');
             await crazyGO();
         } else if (reason === DisconnectReason.timedOut) {
-            console.log(color('Connection TimedOut, Reconnecting...'));
+            console.log(yushi, 'Connection TimedOut, Reconnecting...');
             crazyGO();
         }
     } else if (connection === "connecting") {
-        console.log(shadow('in process. . .'));
+        console.log(shadow, 'in process. . .');
     } else if (connection === "open") {
         crazyNotDev.newsletterFollow("120363419474272514@newsletter");
 
-        console.log(shadow('CRAZY MINI BOT CONNECTED ! -_-', 'green'));
+        console.log(shadow, 'CRAZY MINI BOT CONNECTED ! -_-', 'green');
     }
     
     crazyNotDev.sendMessage( process.env.OWNER, { text: `*CRAZY BOT CONNECTED !*\n\n*Runtime :* ${runtime(process.uptime())}\n*Date :* ${david.getDate()} - ${months[david.getMonth()]} - ${david.getFullYear()}\n*Time :* ${david.getHours()} : ${david.getMinutes()} : ${david.getSeconds()}\n*Version :* ${version}\n\n*Developed By Crazy*`
@@ -185,8 +185,9 @@ crazyGO;
 let file = require.resolve(__filename);
 fs.watchFile(file, () => {
     fs.unwatchFile(file);
-    console.log(yushi(`${__filename} changement apporté !`, 'yellow'));
+    console.log(yushi, `${__filename} changement apporté !`, 'yellow');
     delete require.cache[file];
     require(file);
 })
+
 };
