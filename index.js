@@ -7,10 +7,10 @@ import { makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaile
 import pino from "pino";
 import fs from "fs";
 import readline from "readline";
-import { boom } from "@hapi/boom";
+import boom from "@hapi/boom";
 import { sms } from "./library/myfunc.js";
 import { yushi, shadow, danscot } from "./library/couleur.js";
-
+// const { boom } = pkg;
 const usePairingCode = true;
 
 // memoire
@@ -75,3 +75,4 @@ fs.watchFile(file, () => {
 });
 
 crazyGO();
+
