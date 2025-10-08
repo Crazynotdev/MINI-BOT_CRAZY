@@ -131,10 +131,11 @@ const getAllPremiumUser = () => {
     })
     return array
 }
-    export default 
+    export default { 
     addPremiumUser,
     getPremiumExpired,
     getPremiumPosition,
     expiredCheck,
     checkPremiumUser,
-    getAllPremiumUser;
+    getAllPremiumUser
+    }
