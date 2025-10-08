@@ -30,4 +30,5 @@ const mess = {
     nsfwNotAlready: '⚠️ La fonction NSFW n\'a pas encore été activée ⚠️',
     banAlready: '⚠️ Le bot a déjà été banni de ce groupe ⚠️',
 }
-module.exports = mess;
+export default mess;
+
