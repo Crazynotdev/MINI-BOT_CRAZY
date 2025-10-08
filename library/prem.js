@@ -131,12 +131,10 @@ const getAllPremiumUser = () => {
     })
     return array
 }
-
-module.exports = {
+    export default 
     addPremiumUser,
     getPremiumExpired,
     getPremiumPosition,
     expiredCheck,
     checkPremiumUser,
-    getAllPremiumUser
-}
+    getAllPremiumUser;
