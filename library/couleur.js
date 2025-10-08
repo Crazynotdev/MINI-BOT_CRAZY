@@ -1,4 +1,6 @@
-import { green, keyword, bgKeyword, yellow } from 'chalk'
+import chalk from 'chalk'
+
+const { green, keyword, bgKeyword, yellow } = chalk
 
 const yushi = (text, color) => {
     return !color ? green(text) : keyword(color)(text)
@@ -20,4 +22,5 @@ export default {
   yushi,
   shadow,
   danscot
+
 }
